@@ -1,5 +1,5 @@
 const mongoose=require('mongoose')
-
+const bcrypt=require('bcrypt')
 
 const UserSchema=new mongoose.Schema({
     name:{
@@ -28,6 +28,32 @@ const UserSchema=new mongoose.Schema({
         timestamps:true
     }
 )
+
+UserSchema.pre('save',async function(){
+    const user=this
+    if(!user.isModified('password')){
+        return 
+    }
+    try{
+        const salt=await bcrypt.genSalt(10)
+        const hashedPass=await bcrypt.hash(this.password,salt)
+        this.password=hashedPass
+        return 
+    }
+    catch(err){
+        throw err
+    }
+})
+
+UserSchema.methods.comparePass=async function(pass){
+    try{
+        const isPassMatch=await bcrypt.compare(pass,this.password)
+        return isPassMatch
+    }
+    catch(err){
+        throw err
+    }
+}
 
 const usersModel=mongoose.model('users',UserSchema)
 
