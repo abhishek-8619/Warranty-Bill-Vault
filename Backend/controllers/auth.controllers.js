@@ -6,7 +6,7 @@ const SignupController=async(req,res)=>{
         const data=req.body;
         const saving=user(data)
         const response=await saving.save()
-        const token=await generateToken(response.email)
+        const token=await generateToken(response.id)
         res.status(200).send({response:response,token:token})
         console.log("New user joined!!")
     }
@@ -25,8 +25,8 @@ const LoginController=async (req,res)=>{
         if(!isPass){
             return res.status(401).send({message:"Wrong password or username"})
         }
-        const token=await generateToken(email)
-        res.status(200).send(token)
+        const token=await generateToken(email_db.id)
+        res.status(200).send({token:token})
     }
     catch(err){
         console.log(err)

@@ -9,7 +9,7 @@ const jwtMiddleware=(req,res,next)=>{
 
     try{
         const decoded=jwt.verify(token,JWT_Secret)
-        req.user=decoded
+        req.userID=decoded
         next()
     }
     catch(err){
