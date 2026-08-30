@@ -1,10 +1,11 @@
 const exp=require('express')
 const router=exp.Router()
-const {postProduct,getProduct}=require('../controllers/product.controllers')
-const auth=require('../middleware/auth.middleware')
+const {postProduct,getProduct, putProduct, deleteProduct}=require('../controllers/product.controllers')
 
 
-router.post('/',auth,postProduct)
-router.get('/',auth,getProduct)
+router.post('/',postProduct)
+router.get('/',getProduct)
+router.put('/:id',putProduct)
+router.delete('/:id',deleteProduct)
 
 module.exports=router

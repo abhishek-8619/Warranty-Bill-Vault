@@ -28,4 +28,29 @@ const getProduct=async (req,res)=>{
     }
 }
 
-module.exports={postProduct,getProduct}
+const putProduct=async (req,res)=>{
+    try{
+        const data=req.body
+        const id=req.params.id
+        await product.findByIdAndUpdate(id,data)
+        res.status(200).send({updated:data})
+    }
+    catch(err){
+        console.log(err.message)
+        res.status(500).send("Internal server error")
+    }
+}
+
+const deleteProduct=async (req,res)=>{
+    try{
+        const id=req.params.id
+        const response=await product.findByIdAndDelete(id)
+        res.status(200).send({deleted_product:response})
+    }
+    catch(err){
+        console.log(err.message)
+        res.status(500).send("Internal server error")
+    }
+}
+
+module.exports={postProduct,getProduct,putProduct,deleteProduct}

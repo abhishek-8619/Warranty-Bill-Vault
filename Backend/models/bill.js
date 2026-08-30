@@ -2,35 +2,18 @@ const mongoose = require("mongoose");
 
 const billSchema = new mongoose.Schema(
   {
-    product: {
+    productID: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Product",
+      ref: "product",
       required: true
     },
-
-    billNumber: {
-      type: String,
-      trim: true
-    },
-
-    purchaseDate: {
-      type: Date,
-      required: true
-    },
-
-    amount: {
-      type: Number,
-      required: true,
-      min: 0
-    },
-
-    file: {
-      originalName: {
+    file:{
+        originalname: {
         type: String,
         trim: true
       },
 
-      storedName: {
+      filename: {
         type: String,
         trim: true
       },
@@ -40,11 +23,10 @@ const billSchema = new mongoose.Schema(
         trim: true
       },
 
-      mimeType: {
+      mimetype: {
         type: String,
         trim: true
       },
-
       size: {
         type: Number,
         min: 0

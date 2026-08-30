@@ -12,6 +12,11 @@ const ProductSchema=new mongoose.Schema({
         required:true,
         trim:true
     },
+    price:{
+        type:Number,
+        required:true,
+        default:0
+    },
     brand:{
         type:String,
         required:true,
@@ -53,7 +58,7 @@ const ProductSchema=new mongoose.Schema({
     warranty_end_date:{
         type:Date,
         required:true
-    },
+    }
 },
     {
         timestamps:true
