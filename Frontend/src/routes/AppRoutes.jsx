@@ -23,6 +23,7 @@ const AppRoutes=()=>{
 
             <Route element={<ProtectedRoute/>}>
                 <Route element={<AppLayout/>}>
+                <Route path="/" element={Dashboard}/>
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="dashboard/product/:id" element={<ProductDetails/>}/>
                 <Route path="dashboard/products" element={<Products/>}/>
