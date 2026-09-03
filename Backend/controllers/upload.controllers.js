@@ -21,5 +21,4 @@ const UploadFile=async (req,res)=>{
         res.status("Internal server error")
     }
 }
-
 module.exports={UploadFile}

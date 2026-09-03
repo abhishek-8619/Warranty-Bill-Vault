@@ -1,0 +1,146 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content main {
+  flex: 1;
+  padding: 24px;
+}
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  padding: 24px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  padding: 10px 12px;
+}
+
+.sidebar a.active {
+  font-weight: 600;
+}
+
+.navbar {
+  height: 64px;
+  padding: 0 24px;
+  border-bottom: 1px solid #ddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.dashboard-header h2 {
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  margin: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.stat-card h3 {
+  margin: 0 0 12px;
+}
+
+.stat-card p {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.recent-products {
+  margin-top: 32px;
+}
+
+.product-list {
+  margin-top: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-row:last-child {
+  border-bottom: none;
+}
+
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: auto;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .app-content main {
+    padding: 16px;
+  }
+}
+
