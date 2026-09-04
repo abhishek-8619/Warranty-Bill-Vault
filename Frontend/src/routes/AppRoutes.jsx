@@ -10,7 +10,7 @@ import ProductDetails from "../pages/ProductDetails"
 import Products from "../pages/Products"
 import Profile from "../pages/Profile"
 import ProtectedRoute from "./ProtectedRoutes";
-
+import AddProduct from "../pages/AddProduct";
 const AppRoutes=()=>{
 
     return(
@@ -23,7 +23,8 @@ const AppRoutes=()=>{
 
             <Route element={<ProtectedRoute/>}>
                 <Route element={<AppLayout/>}>
-                <Route path="/" element={Dashboard}/>
+                <Route index element={<Dashboard/>}/>
+                <Route path="products/add" element={<AddProduct />} />
                 <Route path="/dashboard" element={<Dashboard/>}/>
                 <Route path="dashboard/product/:id" element={<ProductDetails/>}/>
                 <Route path="dashboard/products" element={<Products/>}/>

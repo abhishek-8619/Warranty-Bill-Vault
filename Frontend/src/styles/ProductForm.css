@@ -1,0 +1,200 @@
+.product-form-page {
+  width: 100%;
+}
+
+.product-form-header {
+  margin-bottom: 2rem;
+}
+
+.product-form-header p {
+  margin: 0 0 0.5rem;
+}
+
+.product-form-header h1 {
+  margin: 0;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-form-section {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.product-form-section h2 {
+  margin: 0 0 1.5rem;
+}
+
+.product-form-section-content {
+  min-height: 40px;
+}
+
+.product-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.product-form-section-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+.form-field input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.form-field input:focus {
+  outline: none;
+}
+
+.form-field select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  box-sizing: border-box;
+  background: white;
+}
+
+.form-field select:focus {
+  outline: none;
+}
+
+
+
+.bill-upload {
+  width: 100%;
+}
+
+.bill-upload-box {
+  min-height: 180px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.bill-upload-box:hover {
+  border-color: #999;
+}
+
+.bill-upload-box input {
+  display: none;
+}
+
+.bill-upload-icon {
+  font-size: 2rem;
+}
+
+.bill-upload-title {
+  font-weight: 600;
+}
+
+.bill-upload-description {
+  font-size: 0.9rem;
+}
+
+.bill-upload-button {
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.bill-file-preview {
+  min-height: 100px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bill-file-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.bill-file-name {
+  margin: 0;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.bill-file-size {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+}
+
+.bill-file-icon {
+  font-size: 2rem;
+}
+
+.bill-file-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bill-change-button {
+  cursor: pointer;
+}
+
+.bill-file-actions button {
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .bill-file-preview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bill-file-actions {
+    width: 100%;
+  }
+}
+
+.form-error {
+  color: #dc2626;
+  font-size: 0.875rem;
+}
+
+.form-field input:has(+ .form-error),
+.form-field select:has(+ .form-error) {
+  border-color: #dc2626;
+}

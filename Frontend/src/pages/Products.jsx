@@ -1,8 +1,10 @@
 import { useState } from "react";
 import EmptyState from "../components/common/EmptyState";
 import ProductCard from "../components/product/ProductCard";
+import { useNavigate } from "react-router-dom";
 
 function Products() {
+  const navigate=useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -51,7 +53,7 @@ function Products() {
           <p>Manage your products and warranty information.</p>
         </div>
 
-        <button>Add Product</button>
+        <button type="button" onClick={()=>{navigate('/products/add')}}>Add Product</button>
       </section>
 
       <section>

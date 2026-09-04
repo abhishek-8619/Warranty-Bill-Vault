@@ -1,6 +1,9 @@
 import StatusBadge from "../common/StatusBadge";
+import { useNavigate } from "react-router-dom";
+
 
 function ProductCard({ product }) {
+  const navigate = useNavigate();
   return (
     <article>
       <div>
@@ -22,7 +25,9 @@ function ProductCard({ product }) {
         </p>
       </div>
 
-      <button>View Details</button>
+      <button type="button" onClick={() => navigate(`/dashboard/product/${product.id}`)}>
+        View Details
+      </button>
     </article>
   );
 }
